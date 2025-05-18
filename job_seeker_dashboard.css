@@ -1,0 +1,214 @@
+/* Reset and base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #333;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #343a40, #212529);
+    min-height: 100vh;
+    padding-top: 30px;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .sidebar.hidden {
+    transform: translateX(-100%);
+  }
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 22px;
+  }
+  .sidebar a {
+    display: block;
+    padding: 14px 24px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s, padding-left 0.3s;
+    cursor: pointer;
+  }
+  .sidebar a:hover, .sidebar a.active {
+    background: #495057;
+    padding-left: 30px;
+  }
+  
+  /* Main content styles */
+  .main-content {
+    flex: 1;
+    padding: 30px;
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+    width: 100%;
+  }
+  .main-content.fullwidth {
+    margin-left: 0;
+  }
+  
+  /* Top bar with hamburger */
+  .top-bar {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  }
+  .top-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: #dc3545;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  .top-bar a:hover {
+    background: #c82333;
+  }
+  
+  /* Hamburger button */
+  .hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 10px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  }
+  th, td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+  }
+  th {
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+  }
+  tr:hover {
+    background-color: #f1f3f5;
+  }
+  .apply-btn {
+    background: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .apply-btn:hover {
+    background: #218838;
+  }
+  .applied-btn {
+    background: gray;
+    cursor: not-allowed;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+  }
+  
+  /* Section visibility */
+  .section {
+    display: none;
+  }
+  .section.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Profile form styling */
+  .profile-settings {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile-settings h3 {
+    margin-bottom: 25px;
+    color: #007bff;
+    font-size: 22px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  .btn-update {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .btn-update:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+      position: fixed;
+      z-index: 1000;
+    }
+    .sidebar.show {
+      transform: translateX(0);
+    }
+    .main-content {
+      margin-left: 0;
+      width: 100%;
+      padding: 20px;
+    }
+  }
+  

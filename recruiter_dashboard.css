@@ -1,0 +1,669 @@
+/* Basic resets */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #222;
+    color: #eee;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* center horizontally */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    gap: 40px;
+}
+
+.logo {
+    position: absolute;
+    left: 25px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* Center nav links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+    padding: 3px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    left: 0;
+    bottom: -5px;
+    background-color: #00d4ff;
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.nav-links a:hover,
+.nav
+-links a:focus {
+    color: #00d4ff;
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a:focus::after {
+    width: 100%;
+    }
+    
+    /* Hamburger Menu */
+    .hamburger-menu {
+    position: fixed;
+    top: 14px;
+    right: 30px;
+    width: 32px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1100;
+    }
+    
+    .hamburger-menu span {
+    display: block;
+    height: 4px;
+    background-color: #00d4ff;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+    }
+    
+    /* Animate hamburger */
+    .hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+    }
+    
+    .hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    /* Dropdown menu */
+    .menu-dropdown {
+    display: none;
+    position: fixed;
+    top: 58px;
+    right: 30px;
+    background-color: #222;
+    padding: 12px 15px;
+    border-radius: 8px;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    z-index: 1100;
+    min-width: 150px;
+    }
+    
+    .menu-dropdown button {
+    background: none;
+    border: none;
+    color: #00d4ff;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 6px 0;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    }
+    
+    .menu-dropdown button:hover,
+    .menu-dropdown button:focus {
+    background-color: #007bff;
+    color: #fff;
+    outline: none;
+    }
+    
+    /* Dashboard container */
+    .dashboard-container {
+    max-width: 960px;
+    margin: 110px auto 60px;
+    padding: 0 15px;
+    }
+    
+    /* Heading */
+    .dashboard-container h2 {
+    color: #00d4ff;
+    font-weight: 900;
+    margin-bottom: 20px;
+    }
+    
+    /* Alert */
+    .alert {
+    margin: 15px 0;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: 700;
+    display: none;
+    }
+    
+    .alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+    }
+    
+    .alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+    }
+    
+    /* Job post form */
+    .job-post-form {
+    background-color: #f9f9f9;
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    padding: 22px 30px;
+    max-width: 700px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .job-post-form input[type="text"],
+    .job-post-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 2px solid #00d4ff;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+    }
+    
+    .job-post-form input[type="text"]:focus,
+    .job-post-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    }
+    
+    .job-post-form button {
+    background-color: #00d4ff;
+    border: none;
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 14px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+    
+    .job-post-form button:hover,
+    .job-post-form button:focus {
+    background-color: #007bff;
+    outline: none;
+    }
+    
+    /* Modal background */
+    .modal-bg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    }
+    
+    /* Modal box */
+    .modal {
+    background-color: #fff;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    padding: 20px 25px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    font-family: Arial, sans-serif;
+    }
+    
+    /* Close button */
+    .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-weight: 700;
+    color: #00d4ff;
+    cursor: pointer;
+    }
+    
+    /* Job list inside modal */
+    .job-list {
+    margin-top: 12px;
+    }
+    
+    .job-item {
+    border: 1.5px solid #00d4ff;
+    border-radius: 7px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    }
+    
+    .job-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #00d4ff;
+    margin-bottom: 7px;
+    }
+    
+    .job-company {
+    font-weight: 700;
+    margin-bottom: 8px;
+    }
+    
+    .job-description {
+    font-weight: 600;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+    }
+    
+    .job-actions a {
+    margin-right: 15px;
+    color: #00d4ff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+    
+    .job-actions a:hover,
+    .job-actions a:focus {
+    color: #007bff;
+    outline: none;
+    }
+    
+    /* Applicant boxes */
+    .applicant-box {
+    border: 1.5px solid #00d4ff;
+    border-radius: 7px;
+    padding: 12px 15px;
+    margin: 12px 0;
+    background-color: #f5faff;
+    }
+    
+    .applicant-box p {
+    margin: 6px 0;
+    font-weight: 600;
+    }
+    
+    .applicant-box form button {
+    background-color: #00d4ff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    }
+    
+    .applicant-box form button:hover,
+    .applicant-box form button:focus {
+    background-color: #007bff;
+    outline: none;
+    }
+   
+    /* Basic resets */
+body {
+    font-family: Arial, sans-serif;
+    background: url('recru.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    /* Center content horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #222;
+    color: #eee;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* center horizontally */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    gap: 40px;
+}
+
+.logo {
+    position: absolute;
+    left: 25px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* Center nav links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+    padding: 3px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    left: 0;
+    bottom: -5px;
+    background-color: #00d4ff;
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #00d4ff;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: fixed;
+    top: 14px;
+    right: 30px;
+    width: 32px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1100;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 4px;
+    background-color: #00d4ff;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+/* Animate hamburger */
+.hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Dropdown menu */
+.menu-dropdown {
+    display: none;
+    position: fixed;
+    top: 58px;
+    right: 30px;
+    background-color: #222;
+    padding: 12px 15px;
+    border-radius: 8px;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    z-index: 1100;
+    min-width: 150px;
+}
+
+.menu-dropdown button {
+    background: none;
+    border: none;
+    color: #00d4ff;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 6px 0;
+    transition: background-color 0.3s ease;
+    text-align: left;
+}
+
+.menu-dropdown button:hover,
+.menu-dropdown button:focus {
+    background-color: #007bff;
+    color: #fff;
+    outline: none;
+}
+
+/* Dashboard container */
+/* IMPORTANT: Change margin and add fixed width + padding for form centering */
+.dashboard-container {
+    max-width: 500px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* Heading */
+.dashboard-container h2 {
+    color: #00d4ff;
+    font-weight: 900;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Alert */
+.alert {
+    margin: 15px 0;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: 700;
+    display: none;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+/* Job post form */
+.job-post-form {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Input and textarea styling improved for professional look */
+.job-post-form input[type="text"],
+.job-post-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    border: 2px solid #00d4ff;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    resize: vertical;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: inset 0 0 6px #00d4ff33;
+    background-color: #f9faff;
+}
+
+.job-post-form input[type="text"]:focus,
+.job-post-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 12px #007bffaa;
+    outline: none;
+}
+
+/* Textarea fix for height */
+.job-post-form textarea {
+    min-height: 120px;
+}
+
+/* Submit button more modern */
+.job-post-form button {
+    width: 100%;
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 16px 0;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.7);
+}
+
+.job-post-form button:hover,
+.job-post-form button:focus {
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* Job list inside modal */
+.job-list {
+    margin-top: 12px;
+}
+
+.job-item {
+    border: 1.5px solid #00d4ff;
+    border-radius: 7px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+
+.job-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #00d4ff;
+    margin-bottom: 7px;
+}
+
+.job-company {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.job-description {
+    font-weight: 600;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+.job-actions a {
+    margin-right: 15px;
+    color: #00d4ff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.job-actions a:hover,
+.job-actions a:focus {
+    color: #007bff;
+    outline: none;
+}
+
+/* Applicant boxes */
+.applicant-box {
+    border: 1.5px solid #00d4ff;
+    border-radius: 7px;
+    padding: 12px 15px;
+    margin: 12px 0;
+    background-color: #f5faff;
+}
+
+.applicant-box p {
+    margin: 6px 0;
+    font-weight: 600;
+}
+
+.applicant-box form button {
+    background-color: #00d4ff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.applicant-box form button:hover,
+.applicant-box form button:focus {
+    background-color: #007bff;
+    outline: none;
+}

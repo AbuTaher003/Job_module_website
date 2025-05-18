@@ -1,0 +1,127 @@
+.navbar {
+  background-color: #003049;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #669bbc;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #669bbc;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.section-header {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 0.3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #C1121F;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 50px;
+  background-color: rgba(193, 18, 31, 0.3);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.about_cont {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  font-size: 1rem;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about_cont img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+.about_descript {
+  width: 55%;
+  line-height: 1.6;
+}
+
+.questions_cont {
+  background-color: #f9f9f9;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.questions {
+  max-width: 700px;
+  margin: auto;
+  color: #222;
+  font-size: 1.1rem;
+}
+
+.product_btn {
+  background-color: #C1121F;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product_btn:hover {
+  opacity: 0.9;
+  box-shadow: 2px 2px 6px gray;
+}

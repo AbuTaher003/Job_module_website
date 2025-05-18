@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recruiter Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="recruiter_dashboard.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">
+      <a href="index.php"><img src="job_logo.png" alt="Logo" /></a>
+    </div>
+    <div class="nav-links">
+      <a href="index.php">Home</a>
+      <a href="about.php">About</a>
+      <a href="blog.php">Blog</a>
+      <a href="login.php">Login</a>
+      <a href="signup.php">Signup</a>
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <h2>Recruiter Dashboard</h2>
+
+    <form method="post" action="recruiter_dashboard.php" autocomplete="off">
+      <input type="text" name="title" placeholder="Job Title" required />
+      <input type="text" name="company" placeholder="Company Name" required />
+      <textarea name="description" placeholder="Job Description" rows="5" required></textarea>
+      <button type="submit">Post Job</button>
+    </form>
+
+    <div class="alert">This is where messages will appear.</div>
+
+    <h3>Posted Jobs</h3>
+    <div class="job-list">
+      <div class="job-item">
+        <div class="job-title">Sample Job Title</div>
+        <div class="job-company">Company: Sample Company</div>
+        <div class="job-description">This is a sample job description.</div>
+        <div class="job-actions" style="margin-top: 8px;">
+          <a class="edit" href="#">Edit</a>
+          <a class="delete" href="#">Delete</a>
+        </div>
+      </div>
+      <!-- More jobs will be listed here dynamically from backend -->
+    </div>
+  </div>
+
+</body>
+</html>

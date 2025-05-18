@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\"device-width\", initial-scale=1.0">
+    <title>Signup - Job Recruitment System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: url('job_bg.avif') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            flex-direction: column;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark Overlay */
+            backdrop-filter: blur(3px); /* Blur effect */
+        }
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-start;
+            position: absolute;
+            top: 0;
+            z-index: 3;
+        }
+        .navbar a {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background: #0056b3;
+        }
+        .container {
+            background: rgb(128, 128, 128);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 380px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        input, select {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        button {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .login-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #021222;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .login-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.php">Home</a>
+    </div>
+    <div class="container">
+        <h2>Create an Account</h2>
+        <form action="signup.php" method="post">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            
+            <label for="role">Select Role:</label>
+            <select name="role" required>
+                <option value="job_seeker">Job Seeker</option>
+                <option value="recruiter">Recruiter</option>
+                <option value="admin">Admin</option>
+            </select>
+            
+            <button type="submit">Signup</button>
+        </form>
+        <a class="login-link" href="login.php">Already have an account? Login here</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #003049;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer_box_container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer_box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer_box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #669bbc;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.footer_box p,
+.footer_box a {
+    font-size: 0.95rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.footer_box a:hover {
+    color: #a8dadc;
+    padding-left: 5px;
+}
+
+.footer_logo_cont {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 0.6rem;
+}
+
+.footer_logo_cont img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.footer_logo_cont .book_logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.footer_logo_cont .book_logo:hover {
+    color: #fcbf49;
+}
+
+.footer p:last-child {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #ddd;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .footer_box_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer_logo_cont {
+        justify-content: center;
+    }
+}
